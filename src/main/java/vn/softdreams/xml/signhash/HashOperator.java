@@ -145,8 +145,8 @@ public class HashOperator {
         //format lại định dạng dữ liệu xml theo chuẩn
         Canonicalizer c14n = Canonicalizer.getInstance(Canonicalizer.ALGO_ID_C14N_OMIT_COMMENTS);
         byte[] transformed = c14n.canonicalizeSubtree(signedInfo);
-        //hash kèm theo info
-        byte[] hash = sha1WithInfo(transformed);
+        //hash
+        byte[] hash = sha1(transformed);
         //lưu cache document đang xử lý theo sessionId, trả về hash và sessionId
         String sessionId = UUID.randomUUID().toString();
         //for test
@@ -166,6 +166,12 @@ public class HashOperator {
         AlgorithmIdentifier sha1aid_ = new AlgorithmIdentifier(sha1oid_, null);
         DigestInfo di = new DigestInfo(sha1aid_, digest);
         return di.getDEREncoded();
+    }
+
+    private byte[] sha1(byte[] data) throws Exception {
+        MessageDigest md = MessageDigest.getInstance(HASH_ALGO);
+        md.update(data);
+        return md.digest();
     }
 
     private String getDigestForRemote() throws Exception {
@@ -189,9 +195,7 @@ public class HashOperator {
         transformed = c14n.canonicalizeSubtree(nodeToBeHash);
 
         //hash dữ liệu đã định dạng
-        MessageDigest md = MessageDigest.getInstance(HASH_ALGO);
-        md.update(transformed);
-        return Base64.getEncoder().encodeToString(md.digest());
+        return Base64.getEncoder().encodeToString(sha1(transformed));
     }
 
     class HashResponse {
