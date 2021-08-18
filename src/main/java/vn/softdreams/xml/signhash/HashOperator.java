@@ -62,6 +62,10 @@ public class HashOperator {
         this.hashAlgo = hashAlgo;
     }
 
+    public DigestAlgorithm getHashAlgo() {
+        return hashAlgo;
+    }
+
     private Element prepareSignature() throws Exception {
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -151,7 +155,7 @@ public class HashOperator {
         Canonicalizer c14n = Canonicalizer.getInstance(Canonicalizer.ALGO_ID_C14N_OMIT_COMMENTS);
         byte[] transformed = c14n.canonicalizeSubtree(doc);
         //hash
-        byte[] hash = DigestCreator.digestWithInfo(transformed, hashAlgo);
+        byte[] hash = DigestCreator.digest(transformed, hashAlgo);
         //lưu cache document đang xử lý theo sessionId, trả về hash và sessionId
         String sessionId = UUID.randomUUID().toString();
         Cache.getInstance().set(sessionId, inputDoc);

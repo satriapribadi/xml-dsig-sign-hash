@@ -1,5 +1,8 @@
 package vn.softdreams.xml.signhash;
 
+import org.bouncycastle.asn1.ASN1ObjectIdentifier;
+import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
+import org.bouncycastle.asn1.x509.DigestInfo;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -84,7 +87,7 @@ public class Tester {
             String b64Hash = response.getHash();
 
             //Giả lập ký tại client
-            byte[] sig = signHash(Base64.getDecoder().decode(b64Hash), privateKey);
+            byte[] sig = signHashWithInfo(Base64.getDecoder().decode(b64Hash), privateKey, hashOperator.getHashAlgo());
             String b64Signature = Base64.getEncoder().encodeToString(sig);
 
             //Đóng gói lại thành XML hoàn chỉnh
@@ -160,5 +163,20 @@ public class Tester {
         Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding", provider);
         cipher.init(Cipher.ENCRYPT_MODE, privateKey);
         return cipher.doFinal(hash);
+    }
+
+    //Hàm giả lập ký Hash, bản chất hàm này chạy ở client thông qua extension
+    public byte[] signHashWithInfo(byte[] hash, PrivateKey privateKey, DigestAlgorithm algo) throws Exception {
+        Provider provider = new BouncyCastleProvider();
+        Security.addProvider(provider);
+
+        ASN1ObjectIdentifier oidObject = new ASN1ObjectIdentifier(algo.getOid());
+
+        AlgorithmIdentifier identifier = new AlgorithmIdentifier(oidObject, null);
+        DigestInfo di = new DigestInfo(identifier, hash);
+
+        Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding", provider);
+        cipher.init(Cipher.ENCRYPT_MODE, privateKey);
+        return cipher.doFinal(di.getEncoded());
     }
 }
