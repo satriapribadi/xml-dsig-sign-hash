@@ -2,6 +2,7 @@ package vn.softdreams.xml.signhash;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import javax.xml.crypto.*;
@@ -41,7 +42,8 @@ public class Validator {
         String providerName = System.getProperty("jsr105Provider", "org.jcp.xml.dsig.internal.dom.XMLDSigRI");
         XMLSignatureFactory fac = XMLSignatureFactory.getInstance("DOM");
         DOMValidateContext valContext = new DOMValidateContext(new KeyValueKeySelector(), nl.item(nl.getLength() - 1));
-        valContext.setIdAttributeNS((Element) doc2.getElementsByTagName(signingTag).item(0), null, "ID");
+        Node sigNode = doc2.getElementsByTagName("Signature").item(0);
+        valContext.setNode(sigNode);
         XMLSignature signature = fac.unmarshalXMLSignature(valContext);
         return signature.validate(valContext);
     }
@@ -83,6 +85,9 @@ public class Validator {
                 return true;
             } else if (algName.equalsIgnoreCase("RSA")
                     && algURI.equalsIgnoreCase(SignatureMethod.RSA_SHA1)) {
+                return true;
+            }  else if (algName.equalsIgnoreCase("RSA")
+                    && algURI.equalsIgnoreCase(SignatureMethod.RSA_SHA256)) {
                 return true;
             } else {
                 return false;

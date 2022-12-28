@@ -1,107 +1,98 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><?xml-stylesheet type="text/xsl" href="invoice.xsl"?>
-<inv:invoice xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:inv="http://laphoadon.gdt.gov.vn/2014/09/invoicexml/v1">
-  <inv:invoiceData>
-    <inv:invoiceAppRecordId>32936</inv:invoiceAppRecordId>
-    <inv:invoiceType>01GTKT</inv:invoiceType>
-    <inv:templateCode>01GTKT0/001</inv:templateCode>
-    <inv:invoiceSeries>CB/20E</inv:invoiceSeries>
-    <inv:invoiceNumber>0000011</inv:invoiceNumber>
-    <inv:invoiceName>Hóa đơn giá trị gia tăng</inv:invoiceName>
-    <inv:invoiceIssuedDate>2021-08-06T09:47:55.000+07:00</inv:invoiceIssuedDate>
-    <inv:signedDate>2021-08-06T09:47:55.000+07:00</inv:signedDate>
-    <inv:submittedDate />
-    <inv:currencyCode>VND</inv:currencyCode>
-    <inv:exchangeRate>1,0000000000</inv:exchangeRate>
-    <inv:invoiceNote />
-    <inv:adjustmentType>1</inv:adjustmentType>
-    <inv:originalInvoiceId />
-    <inv:additionalReferenceDesc />
-    <inv:additionalReferenceDate />
-    <inv:sellerLegalName>CÔNG TY CỔ PHẦN ĐẦU TƯ CÔNG NGHỆ VÀ THƯƠNG MẠI SOFTDREAMS</inv:sellerLegalName>
-    <inv:sellerTaxCode>0105987432</inv:sellerTaxCode>
-    <inv:sellerAddressLine>Số nhà 8, ngách 26, ngõ 64 phố Phan Đình Giót, Phường Phương Liệt, Quận Thanh Xuân, Thành phố Hà Nội, Việt Nam</inv:sellerAddressLine>
-    <inv:sellerPhoneNumber />
-    <inv:sellerFaxNumber />
-    <inv:sellerEmail />
-    <inv:sellerBankName />
-    <inv:sellerBankAccount />
-    <inv:buyerDisplayName>Người lh</inv:buyerDisplayName>
-    <inv:buyerLegalName>CÔNG TY CỔ PHẦN BKAV</inv:buyerLegalName>
-    <inv:buyerTaxCode>0101360697</inv:buyerTaxCode>
-    <inv:buyerAddressLine>Tầng 2, tòa nhà HH1, Khu ĐT Yên Hòa, P. Yên Hòa, Q. Cầu Giấy, TP Hà Nội</inv:buyerAddressLine>
-    <inv:buyerDeliveryAddress />
-    <inv:buyerPostalCode />
-    <inv:buyerDistrictName />
-    <inv:buyerCityName />
-    <inv:buyerCountryCode />
-    <inv:buyerPhoneNumber />
-    <inv:buyerFaxNumber />
-    <inv:buyerEmail />
-    <inv:buyerBankName />
-    <inv:buyerBankAccount />
-    <inv:payments>
-      <inv:payment>
-        <inv:paymentMethodName>Tiền mặt</inv:paymentMethodName>
-        <inv:paymentAmount>1000.00000</inv:paymentAmount>
-        <inv:bankName />
-        <inv:bankAccountNumber />
-      </inv:payment>
-    </inv:payments>
-    <inv:items>
-      <inv:item>
-        <inv:lineNumber>1</inv:lineNumber>
-        <inv:itemCode>123</inv:itemCode>
-        <inv:itemName>abc</inv:itemName>
-        <inv:unitName>Bao</inv:unitName>
-        <inv:unitPrice>1000.00000</inv:unitPrice>
-        <inv:quantity>1.00000</inv:quantity>
-        <inv:itemTotalAmountWithoutVat>1000.00000</inv:itemTotalAmountWithoutVat>
-        <inv:vatPercentage>10</inv:vatPercentage>
-        <inv:vatAmount>0.00000</inv:vatAmount>
-        <inv:promotion>false</inv:promotion>
-        <inv:adjustmentVatAmount />
-        <inv:discountPercentage />
-        <inv:discountAmount>0.00000</inv:discountAmount>
-        <inv:itemTotalAmountWithVat>1000.00</inv:itemTotalAmountWithVat>
-        <inv:hanghoa_loai>0</inv:hanghoa_loai>
-      </inv:item>
-    </inv:items>
-    <inv:invoiceTaxBreakdowns>
-      <inv:invoiceTaxBreakdown>
-        <inv:vatPercentage>10</inv:vatPercentage>
-        <inv:vatTaxableAmount>1000.00000</inv:vatTaxableAmount>
-        <inv:vatTaxAmount>0.00000</inv:vatTaxAmount>
-        <inv:isVatTaxableAmountPos />
-        <inv:isVatTaxAmountPos />
-      </inv:invoiceTaxBreakdown>
-    </inv:invoiceTaxBreakdowns>
-    <inv:sumOfTotalLineAmountWithoutVAT>1000.00000</inv:sumOfTotalLineAmountWithoutVAT>
-    <inv:totalAmountWithoutVAT>1000.00000</inv:totalAmountWithoutVAT>
-    <inv:totalVATAmount>0.00000</inv:totalVATAmount>
-    <inv:totalAmountWithVAT>1000.00000</inv:totalAmountWithVAT>
-    <inv:totalAmountWithVATFrn />
-    <inv:totalAmountWithVATInWords>Một nghìn đồng</inv:totalAmountWithVATInWords>
-    <inv:isTotalAmountPos />
-    <inv:isTotalVATAmountPos />
-    <inv:isTotalAmtWithoutVatPos />
-    <inv:discountAmount>0.00000</inv:discountAmount>
-    <inv:isDiscountAmtPos>False</inv:isDiscountAmtPos>
-    <inv:userDefines>
-      <inv:base64QRCode>data:image/png;base64,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</inv:base64QRCode>
-      <inv:securityCode>2BDSSS2HW03S</inv:securityCode>
-      <inv:invoiceConvertFullName />
-      <inv:InvoiceConvert>0</inv:InvoiceConvert>
-      <inv:Page>0</inv:Page>
-      <inv:TotalOfPage>0</inv:TotalOfPage>
-    </inv:userDefines>
-  </inv:invoiceData>
-  <ds:Signature id="seller">
-    <ds:SignatureValue />
-  </ds:Signature>
-  <ds:Signature id="buyer">
-    <ds:SignatureValue />
-  </ds:Signature>
-  <inv:controlData>
-    <inv:qrCodeData>&lt;0105987432&gt;;&lt;0101360697&gt;;&lt;1000.00000&gt;;&lt;0.00000&gt;;&lt;YYYY08DD&gt;;&lt;&gt;;&lt;originalCertifiedId&gt;;&lt;certifiedId&gt;;&lt;signature&gt;</inv:qrCodeData>
-  </inv:controlData>
-</inv:invoice>
+<root>
+  <invoiceData>
+    <invoiceAppRecordId>32936</invoiceAppRecordId>
+    <invoiceType>01GTKT</invoiceType>
+    <templateCode>01GTKT0/001</templateCode>
+    <invoiceSeries>CB/20E</invoiceSeries>
+    <invoiceNumber>0000011</invoiceNumber>
+    <invoiceName>Hóa đơn giá trị gia tăng</invoiceName>
+    <invoiceIssuedDate>2021-08-06T09:47:55.000+07:00</invoiceIssuedDate>
+    <signedDate>2021-08-06T09:47:55.000+07:00</signedDate>
+    <submittedDate />
+    <currencyCode>VND</currencyCode>
+    <exchangeRate>1,0000000000</exchangeRate>
+    <invoiceNote />
+    <adjustmentType>1</adjustmentType>
+    <originalInvoiceId />
+    <additionalReferenceDesc />
+    <additionalReferenceDate />
+    <sellerLegalName>CÔNG TY CỔ PHẦN ĐẦU TƯ CÔNG NGHỆ VÀ THƯƠNG MẠI SOFTDREAMS</sellerLegalName>
+    <sellerTaxCode>0105987432</sellerTaxCode>
+    <sellerAddressLine>Số nhà 8, ngách 26, ngõ 64 phố Phan Đình Giót, Phường Phương Liệt, Quận Thanh Xuân, Thành phố Hà Nội, Việt Nam</sellerAddressLine>
+    <sellerPhoneNumber />
+    <sellerFaxNumber />
+    <sellerEmail />
+    <sellerBankName />
+    <sellerBankAccount />
+    <buyerDisplayName>Người lh</buyerDisplayName>
+    <buyerLegalName>CÔNG TY CỔ PHẦN BKAV</buyerLegalName>
+    <buyerTaxCode>0101360697</buyerTaxCode>
+    <buyerAddressLine>Tầng 2, tòa nhà HH1, Khu ĐT Yên Hòa, P. Yên Hòa, Q. Cầu Giấy, TP Hà Nội</buyerAddressLine>
+    <buyerDeliveryAddress />
+    <buyerPostalCode />
+    <buyerDistrictName />
+    <buyerCityName />
+    <buyerCountryCode />
+    <buyerPhoneNumber />
+    <buyerFaxNumber />
+    <buyerEmail />
+    <buyerBankName />
+    <buyerBankAccount />
+    <payments>
+      <payment>
+        <paymentMethodName>Tiền mặt</paymentMethodName>
+        <paymentAmount>1000.00000</paymentAmount>
+        <bankName />
+        <bankAccountNumber />
+      </payment>
+    </payments>
+    <items>
+      <item>
+        <lineNumber>1</lineNumber>
+        <itemCode>123</itemCode>
+        <itemName>abc</itemName>
+        <unitName>Bao</unitName>
+        <unitPrice>1000.00000</unitPrice>
+        <quantity>1.00000</quantity>
+        <itemTotalAmountWithoutVat>1000.00000</itemTotalAmountWithoutVat>
+        <vatPercentage>10</vatPercentage>
+        <vatAmount>0.00000</vatAmount>
+        <promotion>false</promotion>
+        <adjustmentVatAmount />
+        <discountPercentage />
+        <discountAmount>0.00000</discountAmount>
+        <itemTotalAmountWithVat>1000.00</itemTotalAmountWithVat>
+        <hanghoa_loai>0</hanghoa_loai>
+      </item>
+    </items>
+    <invoiceTaxBreakdowns>
+      <invoiceTaxBreakdown>
+        <vatPercentage>10</vatPercentage>
+        <vatTaxableAmount>1000.00000</vatTaxableAmount>
+        <vatTaxAmount>0.00000</vatTaxAmount>
+        <isVatTaxableAmountPos />
+        <isVatTaxAmountPos />
+      </invoiceTaxBreakdown>
+    </invoiceTaxBreakdowns>
+    <sumOfTotalLineAmountWithoutVAT>1000.00000</sumOfTotalLineAmountWithoutVAT>
+    <totalAmountWithoutVAT>1000.00000</totalAmountWithoutVAT>
+    <totalVATAmount>0.00000</totalVATAmount>
+    <totalAmountWithVAT>1000.00000</totalAmountWithVAT>
+    <totalAmountWithVATFrn />
+    <totalAmountWithVATInWords>Một nghìn đồng</totalAmountWithVATInWords>
+    <isTotalAmountPos />
+    <isTotalVATAmountPos />
+    <isTotalAmtWithoutVatPos />
+    <discountAmount>0.00000</discountAmount>
+    <isDiscountAmtPos>False</isDiscountAmtPos>
+    <userDefines>
+      <base64QRCode>data:image/png;base64,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</base64QRCode>
+      <securityCode>2BDSSS2HW03S</securityCode>
+      <invoiceConvertFullName />
+      <InvoiceConvert>0</InvoiceConvert>
+      <Page>0</Page>
+      <TotalOfPage>0</TotalOfPage>
+    </userDefines>
+  </invoiceData>
+</root>
